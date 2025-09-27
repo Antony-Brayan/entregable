@@ -1,0 +1,109 @@
+/* Fuente moderna, deportiva y amigable */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #f1f5f9, #e0f7fa);
+    color: #222;
+    padding: 40px 20px;
+}
+
+/* Contenedor principal */
+header {
+    max-width: 900px;
+    margin: auto;
+    background-color: #ffffff;
+    border-left: 10px solid #0288d1; /* Azul deportivo */
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+header:hover {
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.15);
+}
+
+/* Título principal */
+header h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: #01579b;
+    font-weight: 700;
+    margin-bottom: 25px;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+header h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #0288d1;
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* Contenido */
+.padre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Párrafos */
+.padre p {
+    max-width: 800px;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    text-align: justify;
+    background-color: #e1f5fe;
+    padding: 20px 25px;
+    border-left: 6px solid #03a9f4;
+    border-radius: 12px;
+    color: #263238;
+    transition: background-color 0.3s ease;
+}
+
+.padre p:hover {
+    background-color: #b3e5fc;
+}
+
+/* Imagen */
+.padre img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 14px;
+    border: 5px solid #0288d1;
+    box-shadow: 0 10px 25px rgba(2, 136, 209, 0.3);
+    transition: transform 0.4s ease;
+}
+
+.padre img:hover {
+    transform: scale(1.04);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        padding: 25px;
+    }
+
+    header h1 {
+        font-size: 2.4rem;
+    }
+
+    .padre p {
+        font-size: 1rem;
+        padding: 15px 20px;
+    }
+}

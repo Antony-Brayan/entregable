@@ -1,0 +1,108 @@
+/* Fuente moderna y armónica */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #fffdf7, #fbe9e7);
+    color: #333;
+    padding: 30px;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid #c97b41;
+    transition: all 0.3s ease-in-out;
+}
+
+header:hover {
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Título */
+header h1 {
+    font-size: 3em;
+    text-align: center;
+    color: #6b3e26;
+    margin-bottom: 25px;
+    position: relative;
+    font-weight: 600;
+}
+
+header h1::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background-color: #c97b41;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Contenido */
+.padre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 10px;
+}
+
+/* Párrafos */
+.padre p {
+    max-width: 800px;
+    font-size: 1.15em;
+    text-align: justify;
+    background-color: #fff7f0;
+    padding: 20px;
+    border-left: 5px solid #d2691e;
+    border-radius: 10px;
+    line-height: 1.6;
+    transition: background 0.3s;
+}
+
+.padre p:hover {
+    background-color: #ffeddc;
+}
+
+/* Imagen */
+.padre img {
+    max-width: 100%;
+    border-radius: 12px;
+    border: 4px solid #e6ccb2;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.padre img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        padding: 25px;
+    }
+
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    .padre p {
+        font-size: 1em;
+        padding: 15px;
+    }
+}

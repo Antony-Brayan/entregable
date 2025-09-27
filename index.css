@@ -1,0 +1,185 @@
+/* ========== ESTILOS GENERALES ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #f4f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ========== HEADER ========== */
+header {
+  background: linear-gradient(135deg, #005baa, #2980b9);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ========== NAVBAR ========== */
+nav {
+  background: #00457c;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul > li {
+  margin: 0 20px;
+}
+
+nav a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: #0074d9;
+}
+
+/* Submenús */
+nav ul ul {
+  display: none;
+  position: absolute;
+  background: #0074d9;
+  top: 100%;
+  left: 0;
+  border-radius: 0 0 8px 8px;
+  min-width: 180px;
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+nav ul ul li {
+  width: 100%;
+}
+
+nav ul ul a {
+  padding: 10px 15px;
+  font-size: 0.95rem;
+}
+
+nav ul ul a:hover {
+  background: #005faa;
+}
+
+/* ========== MAIN ========== */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 15px;
+}
+
+main section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+main section h2 {
+  color: #005baa;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+main section p {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+main section img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+main section img:hover {
+  transform: scale(1.03);
+}
+
+/* ========== REDES SOCIALES ========== */
+.Social {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #eaf2f8;
+  margin-top: 2rem;
+}
+
+.Social h2 {
+  color: #005baa;
+  margin-bottom: 1rem;
+}
+
+.Social a {
+  display: inline-block;
+  margin: 0 8px;
+  font-size: 1.5rem;
+  color: white;
+  background: #005baa;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.Social a:hover {
+  background: #2980b9;
+  transform: translateY(-3px);
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: #00457c;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul > li {
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  nav ul ul {
+    position: static;
+    box-shadow: none;
+  }
+}

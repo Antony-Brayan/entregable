@@ -1,0 +1,90 @@
+/* Fuente artística y moderna */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(135deg, #fff5e1, #fbeee6);
+    color: #2e2e2e;
+    padding: 20px;
+}
+
+/* Estilo del header principal */
+header {
+    background: linear-gradient(135deg, #f9d5e5, #fceabb);
+    padding: 40px 30px;
+    border-radius: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+header h1 {
+    text-align: center;
+    font-size: 3em;
+    color: #bc4e9c;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* Contenedor de contenido */
+.padre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Párrafos */
+.padre p {
+    font-size: 1.2em;
+    max-width: 800px;
+    text-align: justify;
+    color: #444;
+    background-color: #ffffffcc;
+    padding: 15px 20px;
+    border-left: 6px solid #bc4e9c;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.padre p:hover {
+    background-color: #ffe6f0;
+}
+
+/* Imagen artística */
+.padre img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 5px solid #f9d5e5;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease-in-out;
+}
+
+.padre img:hover {
+    transform: scale(1.05) rotate(1deg);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    header {
+        padding: 25px 20px;
+    }
+
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    .padre p {
+        font-size: 1em;
+        padding: 12px 15px;
+    }
+}

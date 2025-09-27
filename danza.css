@@ -1,0 +1,109 @@
+/* Importar fuente elegante y moderna */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(to bottom right, #fff0f5, #fefefe);
+    color: #2e2e2e;
+    padding: 30px;
+}
+
+/* Header principal */
+header {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    border-left: 8px solid #ec407a;
+    transition: all 0.3s ease-in-out;
+}
+
+header:hover {
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Título */
+header h1 {
+    text-align: center;
+    font-size: 3em;
+    color: #c2185b;
+    font-weight: 600;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+header h1::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background-color: #f06292;
+    display: block;
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Contenedor del contenido */
+.padre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Párrafos */
+.padre p {
+    max-width: 800px;
+    font-size: 1.2em;
+    text-align: justify;
+    line-height: 1.6;
+    background: #fff6f9;
+    padding: 18px 24px;
+    border-left: 6px solid #f48fb1;
+    border-radius: 10px;
+    color: #444;
+    transition: background 0.3s ease;
+}
+
+.padre p:hover {
+    background: #fde4ef;
+}
+
+/* Imagen */
+.padre img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    border: 5px solid #f8bbd0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.padre img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    header {
+        padding: 25px;
+    }
+
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    .padre p {
+        font-size: 1em;
+        padding: 15px 18px;
+    }
+}

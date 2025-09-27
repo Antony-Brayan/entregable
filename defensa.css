@@ -1,0 +1,108 @@
+/* Fuente fuerte y profesional */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Slab', serif;
+    background: linear-gradient(135deg, #1e1e1e, #121212);
+    color: #eee;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+/* Contenedor principal */
+header {
+    max-width: 900px;
+    margin: auto;
+    background-color: #222;
+    border-left: 8px solid #d32f2f; /* rojo fuerte */
+    border-radius: 16px;
+    padding: 40px 50px;
+    box-shadow: 0 14px 28px rgba(211, 47, 47, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+header:hover {
+    box-shadow: 0 18px 42px rgba(211, 47, 47, 0.6);
+}
+
+/* Título principal */
+header h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #d32f2f;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+header h1::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 5px;
+    background-color: #d32f2f;
+    margin: 12px auto 0;
+    border-radius: 3px;
+}
+
+/* Contenido */
+.padre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+}
+
+/* Párrafos */
+.padre p {
+    max-width: 800px;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    text-align: justify;
+    background-color: #2e2e2e;
+    padding: 22px 28px;
+    border-left: 8px solid #b71c1c;
+    border-radius: 14px;
+    color: #f5f5f5;
+    transition: background-color 0.3s ease;
+}
+
+.padre p:hover {
+    background-color: #421c1c;
+}
+
+/* Imagen */
+.padre img {
+    max-width: 100%;
+    border-radius: 18px;
+    border: 5px solid #b71c1c;
+    box-shadow: 0 10px 30px rgba(215, 39, 39, 0.4);
+    transition: transform 0.4s ease;
+}
+
+.padre img:hover {
+    transform: scale(1.04);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        padding: 30px 25px;
+    }
+    
+    header h1 {
+        font-size: 2.4rem;
+    }
+    
+    .padre p {
+        font-size: 1.1rem;
+        padding: 18px 20px;
+    }
+}

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Talleres Extracurriculares en Senati</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* --- Botón flotante de Chat --- */
+    .chatbot-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #2980b9;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    /* --- Ventana de Chat --- */
+    .chatbox {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      bottom: 70px;
+      right: 20px;
+      width: 320px;
+      max-height: 400px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 1500;
+    }
+
+    .chatbox-header {
+      background: #2980b9;
+      color: white;
+      padding: 10px 15px;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chatbox-body {
+      padding: 15px;
+      overflow-y: auto;
+      flex-grow: 1;
+      background: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chatbox-footer {
+      display: flex;
+      border-top: 1px solid #ddd;
+      padding: 10px;
+    }
+
+    .chatbox-footer input {
+      flex-grow: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .chatbox-footer button {
+      background: #2980b9;
+      color: white;
+      border: none;
+      margin-left: 8px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .user-msg {
+      background: #d1e7ff;
+      color: #0b5394;
+      padding: 8px 12px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      max-width: 80%;
+      align-self: flex-end;
+    }
+
+    .bot-msg {
+      background: #eee;
+      color: #333;
+      padding: 8px 12px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      max-width: 80%;
+      align-self: flex-start;
+    }
+
+    /* --- Botón flotante QR --- */
+    .qr-button {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      background: #16a085;
+      color: #fff;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    .qr-button:hover {
+      background: #1abc9c;
+    }
+
+    /* --- Ventana QR --- */
+    .qr-popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .qr-popup-content {
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 12px;
+      width: 300px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      animation: fadeIn 0.3s ease-in-out;
+      position: relative;
+    }
+
+    .qr-popup-content img {
+      width: 220px;
+      height: 220px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .close-qr {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .close-qr:hover { color: red; }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Malla Extracurriculares de Senati</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li>Artes
+        <ul>
+          <li><a href="dibujo.html">Taller de Dibujo</a></li>
+          <li><a href="pintura.html">Taller de Pintura</a></li>
+          <li><a href="origami.html">Taller de Origami</a></li>
+        </ul>
+      </li>
+      <li>Musica
+        <ul>
+          <li><a href="piano.html">Taller de Piano</a></li>
+          <li><a href="canto.html">Taller de Canto</a></li>
+          <li><a href="danza.html">Taller de Danza</a></li>
+          <li><a href="guitarra.html">Taller de Guitarra</a></li>
+          <li><a href="instrumentos.html">Taller de Instrumentos de Música</a></li>
+        </ul>
+      </li>
+      <li>Deportes
+        <ul>
+          <li><a href="futbol.html">Taller de Fútbol</a></li>
+          <li><a href="voley.html">Taller de Vóley</a></li>
+          <li><a href="defensa.html">Taller de Defensa Personal</a></li>
+          <li><a href="ajedrez.html">Taller de Ajedrez</a></li>
+          <li><a href="futsal.html">Taller de Futsal</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>¿Por qué son importantes los cursos extracurriculares de SENATI?</h2>
+      <p>Los cursos extracurriculares de SENATI están diseñados para complementar tu formación profesional, ayudándote a destacar en el mercado laboral. A través de estos talleres, no solo adquieres nuevas habilidades técnicas, sino que también fortaleces tus competencias blandas, como el trabajo en equipo, la comunicación y el liderazgo.</p>
+      <p>Participar en estas actividades te brinda una valiosa experiencia práctica en entornos de trabajo reales, lo que te hace un profesional más completo y competitivo. Es la oportunidad perfecta para especializarte, expandir tu red de contactos y abrirte a nuevas oportunidades de empleo. Invertir en tu formación extracurricular es invertir en tu futuro profesional.</p>
+      <img src="senati/imagen.jpg" alt="CAF" />
+    </section>
+  </main>
+
+  <div class="Social">
+    <h2>Síguenos en nuestras redes Sociales</h2>
+    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+    <a href="#" class="tiktok"><i class="fab fa-tiktok"></i></a>
+    <a href="#" class="discord"><i class="fab fa-discord"></i></a>
+  </div>
+
+  <footer>
+    <p>Elaborado por: Antony Candia</p>
+  </footer>
+
+  <!-- CHAT BUTTON -->
+  <div class="chatbot-button" id="chatbotToggle" title="Abrir chat">
+    <i class="fas fa-comment-alt"></i>
+  </div>
+
+  <!-- CHAT BOX -->
+  <div class="chatbox" id="chatbox">
+    <div class="chatbox-header">
+      <span>Chat en línea</span>
+      <span id="closeChat">&times;</span>
+    </div>
+    <div class="chatbox-body" id="chatboxBody">
+      <p class="bot-msg">¡Hola! 👋 ¿En qué puedo ayudarte?</p>
+    </div>
+    <div class="chatbox-footer">
+      <input type="text" id="userInput" placeholder="Escribe tu mensaje..." />
+      <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- QR BUTTON -->
+  <button class="qr-button" id="qrBtn" aria-label="Mostrar código QR">&#x1F4F7;</button>
+
+  <!-- QR POPUP -->
+  <div class="qr-popup" id="qrPopup">
+    <div class="qr-popup-content">
+      <button class="close-qr" id="closeQr">&times;</button>
+      <h2>Escanea nuestro Código QR</h2>
+      <p>Usa tu móvil para acceder rápidamente a los talleres.</p>
+      <img src="senati/qrcode_chrome.jpg" alt="Código QR" />
+    </div>
+  </div>
+
+  <script>
+    // CHAT
+    const chatbotToggle = document.getElementById("chatbotToggle");
+    const chatbox = document.getElementById("chatbox");
+    const closeChat = document.getElementById("closeChat");
+    const sendBtn = document.getElementById("sendBtn");
+    const userInput = document.getElementById("userInput");
+    const chatboxBody = document.getElementById("chatboxBody");
+
+    const faqs = {
+      "¿qué son las mallas curriculares?": "Son programas de actividades que complementan la formación principal.",
+      "¿por que son importantes?": "Porque desarrollan habilidades sociales, de liderazgo y mejoran el rendimiento académico.",
+      "¿qué ventajas tiene las mallas extracurriculares?": "Mejora del rendimiento, habilidades sociales y prevención de conductas de riesgo.",
+      "¿hay algun costo?": "No, son completamente gratuitas.",
+      "¿se necesita llevar algo?": "Depende del instructor; a veces se pide material adicional.",
+      "¿cada cuanto tiempo hay clase?": "Puedes ver los horarios completos en nuestra web oficial.",
+      "¿que ropa puedo llevar ?": "Ropa cómoda, depende del taller."
+    };
+
+    chatbotToggle.addEventListener("click", () => {
+      chatbox.style.display = "flex";
+      userInput.focus();
+    });
+
+    closeChat.addEventListener("click", () => {
+      chatbox.style.display = "none";
+    });
+
+    sendBtn.addEventListener("click", sendMessage);
+    userInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") sendMessage();
+    });
+
+    function sendMessage() {
+      const msg = userInput.value.trim();
+      if (msg !== "") {
+        const userMsg = document.createElement("p");
+        userMsg.classList.add("user-msg");
+        userMsg.innerText = msg;
+        chatboxBody.appendChild(userMsg);
+
+        let respuesta = "🤖 Lo siento, no tengo información sobre eso.";
+        for (let pregunta in faqs) {
+          if (msg.toLowerCase().includes(pregunta)) {
+            respuesta = "🤖 " + faqs[pregunta];
+            break;
+          }
+        }
+
+        const botMsg = document.createElement("p");
+        botMsg.classList.add("bot-msg");
+        botMsg.innerText = respuesta;
+        chatboxBody.appendChild(botMsg);
+
+        userInput.value = "";
+        chatboxBody.scrollTop = chatboxBody.scrollHeight;
+      }
+    }
+
+    // QR
+    const qrBtn = document.getElementById("qrBtn");
+    const qrPopup = document.getElementById("qrPopup");
+    const closeQr = document.getElementById("closeQr");
+
+    qrBtn.addEventListener("click", () => qrPopup.style.display = "flex");
+    closeQr.addEventListener("click", () => qrPopup.style.display = "none");
+    qrPopup.addEventListener("click", (e) => {
+      if (e.target === qrPopup) qrPopup.style.display = "none";
+    });
+  </script>
+</body>
+</html>
